@@ -1,0 +1,5 @@
+minimumReleaseAge: 1440
+minimumReleaseAgeExclude:
+  - '@radham/eslint-config'
+onlyBuiltDependencies:
+  - esbuild
