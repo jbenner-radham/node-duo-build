@@ -1,15 +1,15 @@
 {
-  "name": "node-starter",
+  "name": "@radham/duo-build",
   "version": "0.0.0",
-  "description": "...",
+  "description": "An opinionated CLI build app that produces both CJS and ESM based on esbuild.",
   "keywords": [],
-  "homepage": "https://github.com/jbenner-radham/node-starter#readme",
+  "homepage": "https://github.com/jbenner-radham/node-duo-build#readme",
   "bugs": {
-    "url": "https://github.com/jbenner-radham/node-starter/issues"
+    "url": "https://github.com/jbenner-radham/node-duo-build/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jbenner-radham/node-starter.git"
+    "url": "git+https://github.com/jbenner-radham/node-duo-build.git"
   },
   "license": "BSD-3-Clause",
   "author": "James Benner <hello@jamesbenner.com> (https://www.jamesbenner.com/)",
@@ -30,8 +30,9 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "prebuild": "rimraf dist",
-    "build": "node ./scripts/build.js",
+    "prebuild": "rimraf ./dist",
+    "build": "tsx ./src/cli.ts --external esbuild --platform node",
+    "postbuild": "is-x ./dist/esm/cli.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prepare": "husky",
@@ -40,22 +41,27 @@
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest"
   },
+  "dependencies": {
+    "esbuild": "^0.25.11",
+    "execa": "^9.6.0",
+    "meow": "^14.0.0",
+    "typescript": "^5.9.3"
+  },
   "devDependencies": {
     "@eslint/compat": "^1.4.0",
     "@eslint/json": "^0.13.2",
     "@eslint/markdown": "^7.4.0",
     "@radham/eslint-config": "^7.0.0",
+    "@radham/is-x": "^0.2.0",
     "@types/node": "^22.18.8",
     "@vitest/coverage-v8": "^3.2.4",
-    "esbuild": "^0.25.11",
     "eslint": "^9.37.0",
-    "execa": "^9.6.0",
     "globals": "^16.4.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.4",
     "rimraf": "^6.0.1",
     "sort-package-json": "^3.4.0",
-    "typescript": "^5.9.3",
+    "tsx": "^4.20.6",
     "vitest": "^3.2.4"
   },
   "packageManager": "pnpm@10.18.2",
