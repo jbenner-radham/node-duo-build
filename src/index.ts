@@ -73,10 +73,7 @@ async function writePackageJson(type: 'commonjs' | 'module'): Promise<void> {
 
   // Some package properties are invalid, problematic, or complex to fix in this new context. So we
   // just delete them outright.
-  delete packageJson.dependencies;
-  delete packageJson.devDependencies;
   delete packageJson.files;
-  delete packageJson.peerDependencies;
   delete packageJson.scripts;
 
   const filepath = `${basePath}/package.json`;
