@@ -35,7 +35,7 @@ Usage
 ```sh-session
 $ duo-build --help
 
-  An opinionated build app that produces both CJS and ESM powered by esbuild.
+  An opinionated build tool that produces both CJS and ESM powered by esbuild.
 
   Usage
     $ duo-build
