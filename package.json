@@ -2,7 +2,19 @@
   "name": "duo-build",
   "version": "0.0.0",
   "description": "An opinionated build tool that produces both CJS and ESM powered by esbuild.",
-  "keywords": [],
+  "keywords": [
+    "build",
+    "bundle",
+    "cjs",
+    "cli",
+    "esbuild",
+    "esm",
+    "package",
+    "packaging",
+    "tool",
+    "types",
+    "typescript"
+  ],
   "homepage": "https://github.com/jbenner-radham/node-duo-build#readme",
   "bugs": {
     "url": "https://github.com/jbenner-radham/node-duo-build/issues"
