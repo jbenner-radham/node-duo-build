@@ -1,6 +1,6 @@
 {
   "name": "duo-build",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "An opinionated build tool that produces both CJS and ESM powered by esbuild.",
   "keywords": [
     "build",
