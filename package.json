@@ -1,7 +1,7 @@
 {
   "name": "duo-build",
   "version": "0.0.0",
-  "description": "An opinionated build app that produces both CJS and ESM powered by esbuild.",
+  "description": "An opinionated build tool that produces both CJS and ESM powered by esbuild.",
   "keywords": [],
   "homepage": "https://github.com/jbenner-radham/node-duo-build#readme",
   "bugs": {
