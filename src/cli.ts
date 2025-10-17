@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
 import duoBuild from './index.js';
+import chalk from 'chalk';
 import esbuild from 'esbuild';
 import meow from 'meow';
 
 const cli = meow(`
-  An opinionated build app that produces both CJS and ESM powered by esbuild.
+  An opinionated build app that produces both CJS and ESM powered by ${chalk.bold('esbuild')}.
 
   Usage
     $ duo-build
