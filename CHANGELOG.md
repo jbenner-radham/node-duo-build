@@ -14,10 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Normalized the app to use POSIX paths. Some things like `package.bin` can apparently break if
   using Windows paths.
 - The contents of the root `package.json` are now copied into the respective
-  `dist/{cjs,esm}/package.json` files before being potentially modified. The mostly empty
-  `package.json` files which were being created before were causing issues with apps which utilized
-  the `meow` package (_e.g._, the `version` property was missing so the `--version` flag was
-  broken).
+  `dist/{cjs,esm}/package.json` files before being  modified. The mostly empty `package.json` files
+   which were being created before were causing issues with apps which utilized the `meow` package
+  (_e.g._, the `version` property was missing so the `--version` flag was broken).
 
 [0.1.1] - 2025-10-17
 --------------------
