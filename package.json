@@ -25,6 +25,7 @@
       "default": "./dist/cjs/index.js"
     }
   },
+  "bin": "./dist/esm/cli.js",
   "files": [
     "dist",
     "CHANGELOG.md"
