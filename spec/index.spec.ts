@@ -1,8 +1,8 @@
-import lib from '../src/index.js';
+import duoBuild from '../src/index.js';
 import { describe, expect, it } from 'vitest';
 
-describe('lib', () => {
+describe('duoBuild', () => {
   it('is a function', () => {
-    expect(lib).toBeTypeOf('function');
+    expect(duoBuild).toBeTypeOf('function');
   });
 });
