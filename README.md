@@ -7,7 +7,8 @@ Since `duo-build` is opinionated, it makes the following assumptions about your 
 
 - It is [TypeScript](https://www.typescriptlang.org/) based.
 - Its entrypoint is `src/index.ts`.
-- If it is a CLI app it will have a `src/cli.ts` script which will act as an additional entrypoint.
+- If it is a CLI app it will have a `src/cli.ts` script which will act as an additional entrypoint
+  (for ESM only).
 - Build artifacts are placed in `dist`. Which has `cjs`, `esm`, and `types` subdirectories.
 - The `tsconfig.json` will specify the `"declaration": true`, `"emitDeclarationOnly": true`, and
   `"outDir": "./dist/types"` compiler options.
