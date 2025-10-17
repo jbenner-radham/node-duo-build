@@ -1,7 +1,8 @@
 duo-build
 =========
 
-An opinionated build app that produces both CJS and ESM powered by [esbuild](https://esbuild.github.io/).
+An opinionated build app that produces both [CJS](https://nodejs.org/api/modules.html) and
+[ESM](https://nodejs.org/api/esm.html) powered by [esbuild](https://esbuild.github.io/).
 
 Since `duo-build` is opinionated, it makes the following assumptions about your project:
 
