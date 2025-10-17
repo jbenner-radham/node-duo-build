@@ -1,4 +1,5 @@
 import esbuild from 'esbuild';
+import type { BuildOptions } from 'esbuild';
 import { $ } from 'execa';
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -27,14 +28,14 @@ async function writePackageJsonFile(type: 'commonjs' | 'module'): Promise<void> 
   await fs.writeFile(filepath, packageJson);
 }
 
-async function buildCjs(options: esbuild.BuildOptions = {}): Promise<void> {
+async function buildCjs(options: BuildOptions = {}): Promise<void> {
   const defaultOptions = { ...COMMON_ESBUILD_OPTIONS, format: 'cjs' as const, outdir: CJS_PATH };
 
   await esbuild.build({ ...defaultOptions, ...options });
   await writePackageJsonFile('commonjs');
 }
 
-async function buildEsm(options: esbuild.BuildOptions = {}): Promise<void> {
+async function buildEsm(options: BuildOptions = {}): Promise<void> {
   const cliScriptPath = path.join('src', 'cli.ts');
   const isCliApp = await isFile(cliScriptPath);
   const entryPoints = isCliApp
@@ -55,6 +56,6 @@ async function buildTypes(): Promise<void> {
   await $`tsc`;
 }
 
-export default async function duoBuild(options: esbuild.BuildOptions = {}): Promise<void> {
+export default async function duoBuild(options: BuildOptions = {}): Promise<void> {
   await Promise.all([buildCjs(options), buildEsm(options), buildTypes()]);
 }
