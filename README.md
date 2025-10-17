@@ -1,7 +1,7 @@
-@radham/duo-build
-=================
+duo-build
+=========
 
-An opinionated CLI build app that produces both CJS and ESM based on esbuild.
+An opinionated build app that produces both CJS and ESM powered by esbuild.
 
 Install
 -------
@@ -14,7 +14,7 @@ Usage
 ```sh-session
 $ duo-build --help
 
-  An opinionated CLI build app that produces both CJS and ESM based on esbuild.
+  An opinionated build app that produces both CJS and ESM powered by esbuild.
 
   Usage
     $ duo-build

@@ -5,7 +5,7 @@ import esbuild from 'esbuild';
 import meow from 'meow';
 
 const cli = meow(`
-  An opinionated CLI build app that produces both CJS and ESM based on esbuild.
+  An opinionated build app that produces both CJS and ESM powered by esbuild.
 
   Usage
     $ duo-build
