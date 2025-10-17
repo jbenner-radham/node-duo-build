@@ -5,15 +5,18 @@ import type { Platform } from 'esbuild';
 import meow from 'meow';
 
 const cli = meow(`
+  An opinionated build app that produces both CJS and ESM powered by esbuild.
+
   Usage
     $ duo-build
 
   Options
-    --external, -e  Mark a file or a package as external to exclude it from the build.
-                    Can be specified multiple times.
+    --external, -e  Mark a file or a package as external to exclude it from the
+                    build. Can be specified multiple times.
     --help, -h      Display this message.
-    --packages, -p  Whether package dependencies are bundled with or excluded from the build.
-                    Can be set to "bundle" or "external". Defaults to "bundle".
+    --packages, -p  Whether package dependencies are bundled with or excluded
+                    from the build. Can be set to "bundle" or "external".
+                    Defaults to "bundle".
     --platform, -P  The platform to build for ("browser", "neutral", or "node").
                     Defaults to "browser".
     --version, -v   Display the application version.
