@@ -37,7 +37,9 @@
       "default": "./dist/cjs/index.js"
     }
   },
-  "bin": "./dist/esm/cli.js",
+  "bin": {
+    "duo-build": "./dist/esm/cli.js"
+  },
   "files": [
     "dist",
     "CHANGELOG.md"
