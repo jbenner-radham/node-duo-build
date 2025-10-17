@@ -1,13 +1,10 @@
 #!/usr/bin/env node
 
 import duoBuild from './index.js';
-import chalk from 'chalk';
-import esbuild from 'esbuild';
+import type { Platform } from 'esbuild';
 import meow from 'meow';
 
 const cli = meow(`
-  An opinionated build app that produces both CJS and ESM powered by ${chalk.bold('esbuild')}.
-
   Usage
     $ duo-build
 
@@ -15,7 +12,9 @@ const cli = meow(`
     --external, -e  Mark a file or a package as external to exclude it from the build.
                     Can be specified multiple times.
     --help, -h      Display this message.
-    --platform, -p  The platform to build for ("browser", "neutral", or "node").
+    --packages, -p  Whether package dependencies are bundled with or excluded from the build.
+                    Can be set to "bundle" or "external". Defaults to "bundle".
+    --platform, -P  The platform to build for ("browser", "neutral", or "node").
                     Defaults to "browser".
     --version, -v   Display the application version.
 `, {
@@ -30,11 +29,17 @@ const cli = meow(`
       type: 'boolean',
       shortFlag: 'h'
     },
+    packages: {
+      choices: ['bundle', 'external'],
+      default: 'bundle',
+      type: 'string',
+      shortFlag: 'p'
+    },
     platform: {
       choices: ['browser', 'neutral', 'node'],
       default: 'browser',
       type: 'string',
-      shortFlag: 'p'
+      shortFlag: 'P'
     },
     version: {
       type: 'boolean',
@@ -46,7 +51,8 @@ const cli = meow(`
 try {
   const options = {
     external: cli.flags.external as string[],
-    platform: cli.flags.platform as esbuild.Platform
+    packages: cli.flags.packages as 'bundle' | 'external',
+    platform: cli.flags.platform as Platform
   };
 
   await duoBuild(options);

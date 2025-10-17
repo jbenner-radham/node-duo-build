@@ -31,8 +31,9 @@
     "CHANGELOG.md"
   ],
   "scripts": {
+    "bin": "tsx ./src/cli.ts",
     "prebuild": "rimraf ./dist",
-    "build": "tsx ./src/cli.ts --external esbuild --platform node",
+    "build": "tsx ./src/cli.ts --packages external --platform node",
     "postbuild": "is-x ./dist/esm/cli.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
@@ -43,7 +44,6 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "chalk": "^5.6.2",
     "esbuild": "^0.25.11",
     "execa": "^9.6.0",
     "meow": "^14.0.0",
