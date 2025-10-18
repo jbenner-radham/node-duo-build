@@ -5,8 +5,6 @@ import type { Platform } from 'esbuild';
 import meow from 'meow';
 
 const cli = meow(`
-  An opinionated build tool that produces both CJS and ESM powered by esbuild.
-
   Usage
     $ duo-build
 
@@ -21,7 +19,6 @@ const cli = meow(`
                     Defaults to "browser".
     --version, -v   Display the application version.
 `, {
-  importMeta: import.meta,
   flags: {
     external: {
       isMultiple: true,
@@ -48,7 +45,8 @@ const cli = meow(`
       type: 'boolean',
       shortFlag: 'v'
     }
-  }
+  },
+  importMeta: import.meta
 });
 
 try {
