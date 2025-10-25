@@ -70,7 +70,7 @@
     "@eslint/json": "^0.13.2",
     "@eslint/markdown": "^7.4.0",
     "@radham/eslint-config": "^7.0.0",
-    "@radham/is-x": "^0.2.0",
+    "@radham/is-x": "^0.5.1",
     "@types/node": "^22.18.8",
     "@vitest/coverage-v8": "^3.2.4",
     "eslint": "^9.37.0",
