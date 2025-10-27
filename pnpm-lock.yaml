@@ -20,6 +20,9 @@ importers:
       meow:
         specifier: ^14.0.0
         version: 14.0.0
+      meowtastic:
+        specifier: ^0.5.0
+        version: 0.5.0
       sort-package-json:
         specifier: ^3.4.0
         version: 3.4.0
@@ -1254,6 +1257,10 @@ packages:
 
   meowtastic@0.3.1:
     resolution: {integrity: sha512-uGWkjZqOkDFD6bVrr9hoDulH9Tnx0SdiUXWTyd08IkbGk3CE6zdFLS8ke5s/fWFMPjj/isMIjJW1eAUE8yqVvw==}
+    engines: {node: '>=22'}
+
+  meowtastic@0.5.0:
+    resolution: {integrity: sha512-TW9oz4V06im08Y47X7RgYgkqfll33f3XUNl2sDDj1JlicHXarA3etE0xVUAJLc8dfh+6ftJz+GoiDTHCtKtLCQ==}
     engines: {node: '>=22'}
 
   merge2@1.4.1:
@@ -3049,6 +3056,14 @@ snapshots:
   meow@14.0.0: {}
 
   meowtastic@0.3.1:
+    dependencies:
+      chalk-pipe: 6.2.0
+      decamelize: 6.0.1
+      decamelize-keys: 2.0.1
+      is-plain-obj: 4.1.0
+      read-package-up: 11.0.0
+
+  meowtastic@0.5.0:
     dependencies:
       chalk-pipe: 6.2.0
       decamelize: 6.0.1

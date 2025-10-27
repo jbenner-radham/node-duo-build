@@ -62,6 +62,7 @@
     "execa": "^9.6.0",
     "is-plain-obj": "^4.1.0",
     "meow": "^14.0.0",
+    "meowtastic": "^0.5.0",
     "sort-package-json": "^3.4.0",
     "typescript": "^5.9.3"
   },

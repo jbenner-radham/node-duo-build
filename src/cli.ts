@@ -3,51 +3,35 @@
 import duoBuild from './index.js';
 import type { Platform } from 'esbuild';
 import meow from 'meow';
+import { getHelpTextAndOptions } from 'meowtastic';
 
-const cli = meow(`
-  Usage
-    $ duo-build
-
-  Options
-    --external, -e  Mark a file or a package as external to exclude it from the
-                    build. Can be specified multiple times.
-    --help, -h      Display this message.
-    --packages, -p  Whether package dependencies are bundled with or excluded
-                    from the build. Can be set to "bundle" or "external".
-                    Defaults to "bundle".
-    --platform, -P  The platform to build for ("browser", "neutral", or "node").
-                    Defaults to "browser".
-    --version, -v   Display the application version.
-`, {
+const cli = meow(...getHelpTextAndOptions({
   flags: {
     external: {
+      description: 'Mark a file or a package as external to exclude it from the build. Can be' +
+        ' specified multiple times.',
       isMultiple: true,
       type: 'string',
       shortFlag: 'e'
     },
-    help: {
-      type: 'boolean',
-      shortFlag: 'h'
-    },
     packages: {
       choices: ['bundle', 'external'],
+      description: 'Whether package dependencies are bundled with or excluded from the build. Can' +
+        ' be set to %CHOICES_OR%. Defaults to %DEFAULT%.',
       default: 'bundle',
       type: 'string',
       shortFlag: 'p'
     },
     platform: {
       choices: ['browser', 'neutral', 'node'],
+      description: 'The platform to build for (%CHOICES_OR%). Defaults to %DEFAULT%.',
       default: 'browser',
       type: 'string',
       shortFlag: 'P'
-    },
-    version: {
-      type: 'boolean',
-      shortFlag: 'v'
     }
   },
   importMeta: import.meta
-});
+}));
 
 try {
   const options = {
